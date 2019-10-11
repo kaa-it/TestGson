@@ -4,7 +4,6 @@ import com.google.gson.stream.JsonToken
 import java.io.StringReader
 import java.lang.RuntimeException
 import kotlin.reflect.KMutableProperty1
-import kotlin.reflect.full.createInstance
 import kotlin.reflect.full.createType
 import kotlin.reflect.full.memberProperties
 
@@ -81,10 +80,7 @@ class JsonParser {
     }
 }
 
-
-var prevName: String = ""
-
-fun main(args: Array<String>) {
+fun main() {
     val gson = Gson()
     var modemMainPackage = gson.fromJson(packageMain, ModemPackage::class.java)
     var modemAdditionalPackage = gson.fromJson(packageAdditional, ModemPackage::class.java)
